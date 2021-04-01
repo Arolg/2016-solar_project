@@ -17,7 +17,7 @@ def read_space_objects_data_from_file(input_filename):
             if len(line.strip()) == 0 or line[0] == '#':
                 continue  # пустые строки и строки-комментарии пропускаем
             object_type = line.split()[0].lower()
-            if object_type == "star":  # FIXME: do the same for planet: DONE
+            if object_type == "star":
                 star = Star()
                 star = parse_star_parameters(line, star)
                 objects.append(star)
@@ -92,10 +92,7 @@ def write_space_objects_data_to_file(output_filename, space_objects):
         for obj in space_objects:
             print(out_file, obj.type, obj.R, obj.color,
                   obj.m, obj.x, obj.y, obj.Vx, obj.Vy)
-            # FIXME: should store real values: DONE
 
-
-# FIXME: хорошо бы ещё сделать функцию, сохранающую статистику в заданный файл...
 
 if __name__ == "__main__":
     print("This module is not for direct call!")

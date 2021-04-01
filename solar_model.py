@@ -26,6 +26,7 @@ def calculate_force(body, space_objects):
         body.Fx += F * math.cos(angle) * numpy.sign(obj.x - body.x)
         body.Fy += F * math.sin(angle) * numpy.sign(obj.y - body.y)
 
+
 def move_space_object(body, dt):
     """Перемещает тело в соответствии с действующей на него силой.
     Параметры:
